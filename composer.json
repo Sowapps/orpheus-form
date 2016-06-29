@@ -8,10 +8,7 @@
 	"autoload" : {
 		"psr-4" : {
 			"Orpheus\\" : "src"
-		},
-		"files" : [
-			"src/_loader.php"
-		]
+		}
 	},
 	"require" : {
 		"orpheus/orpheus-core" : "dev-master",
