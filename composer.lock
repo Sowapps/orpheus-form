@@ -1,0 +1,297 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "646784af1e6534cfb352b2c6d05afd4b",
+    "content-hash": "7e765f6efcd1d51718df7d265944f1ee",
+    "packages": [
+        {
+            "name": "orpheus/orpheus-cache",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sowapps/orpheus-cache.git",
+                "reference": "f20079a8d462c736d442fb0bc1f1c42b295f402d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-cache/zipball/f20079a8d462c736d442fb0bc1f1c42b295f402d",
+                "reference": "f20079a8d462c736d442fb0bc1f1c42b295f402d",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Orpheus\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florent HAZARD",
+                    "email": "contact@sowapps.com",
+                    "homepage": "http://sowapps.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Orpheus Cache",
+            "keywords": [
+                "apc",
+                "cache",
+                "filesystem",
+                "orpheus"
+            ],
+            "time": "2016-06-28 10:36:32"
+        },
+        {
+            "name": "orpheus/orpheus-core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sowapps/orpheus-core.git",
+                "reference": "246dc973e97868f1c9f356a97cdd09f78f581ab9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-core/zipball/246dc973e97868f1c9f356a97cdd09f78f581ab9",
+                "reference": "246dc973e97868f1c9f356a97cdd09f78f581ab9",
+                "shasum": ""
+            },
+            "require": {
+                "orpheus/orpheus-hook": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Orpheus\\": "src"
+                },
+                "files": [
+                    "src/_loader.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florent HAZARD",
+                    "email": "contact@sowapps.com",
+                    "homepage": "http://sowapps.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Orpheus Core",
+            "keywords": [
+                "core",
+                "orpheus"
+            ],
+            "time": "2016-06-28 10:39:42"
+        },
+        {
+            "name": "orpheus/orpheus-hook",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sowapps/orpheus-hook.git",
+                "reference": "325a2823b8f9df2db7975b71855a1c706b2e241a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-hook/zipball/325a2823b8f9df2db7975b71855a1c706b2e241a",
+                "reference": "325a2823b8f9df2db7975b71855a1c706b2e241a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Orpheus\\": "src"
+                },
+                "files": [
+                    "src/_loader.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florent HAZARD",
+                    "email": "contact@sowapps.com",
+                    "homepage": "http://sowapps.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Orpheus Hook",
+            "homepage": "https://github.com/Sowapps/orpheus-hook",
+            "keywords": [
+                "HOOK",
+                "event",
+                "orpheus"
+            ],
+            "time": "2016-06-28 10:36:11"
+        },
+        {
+            "name": "orpheus/orpheus-inputcontroller",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sowapps/orpheus-inputcontroller.git",
+                "reference": "4eaaf32fc4aafb9b549b09fa39120ee74002c2f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-inputcontroller/zipball/4eaaf32fc4aafb9b549b09fa39120ee74002c2f6",
+                "reference": "4eaaf32fc4aafb9b549b09fa39120ee74002c2f6",
+                "shasum": ""
+            },
+            "require": {
+                "orpheus/orpheus-cache": "dev-master",
+                "orpheus/orpheus-core": "dev-master",
+                "orpheus/orpheus-hook": "dev-master",
+                "orpheus/orpheus-rendering": "dev-master",
+                "orpheus/orpheus-yaml": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Orpheus\\": "src"
+                },
+                "files": [
+                    "src/_loader.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florent HAZARD",
+                    "email": "contact@sowapps.com",
+                    "homepage": "http://sowapps.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Orpheus Input Controller",
+            "keywords": [
+                "controller",
+                "input",
+                "model",
+                "mvc",
+                "orpheus",
+                "view"
+            ],
+            "time": "2016-06-28 10:35:58"
+        },
+        {
+            "name": "orpheus/orpheus-rendering",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sowapps/orpheus-rendering.git",
+                "reference": "1841a7e7314c4bdbfe30949023364a39f54c622d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-rendering/zipball/1841a7e7314c4bdbfe30949023364a39f54c622d",
+                "reference": "1841a7e7314c4bdbfe30949023364a39f54c622d",
+                "shasum": ""
+            },
+            "require": {
+                "orpheus/orpheus-core": "dev-master",
+                "orpheus/orpheus-hook": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Orpheus\\": "src"
+                },
+                "files": [
+                    "src/_loader.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florent HAZARD",
+                    "email": "contact@sowapps.com",
+                    "homepage": "http://sowapps.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Orpheus Rendering",
+            "keywords": [
+                "Rendering",
+                "orpheus"
+            ],
+            "time": "2016-06-28 10:35:46"
+        },
+        {
+            "name": "orpheus/orpheus-yaml",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sowapps/orpheus-yaml.git",
+                "reference": "bfaca2af4ef7a20508cb0024a1bee049d0c16c91"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sowapps/orpheus-yaml/zipball/bfaca2af4ef7a20508cb0024a1bee049d0c16c91",
+                "reference": "bfaca2af4ef7a20508cb0024a1bee049d0c16c91",
+                "shasum": ""
+            },
+            "require": {
+                "orpheus/orpheus-core": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Orpheus\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florent HAZARD",
+                    "email": "contact@sowapps.com",
+                    "homepage": "http://sowapps.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Orpheus YAML",
+            "keywords": [
+                "orpheus",
+                "yaml"
+            ],
+            "time": "2016-06-28 10:35:30"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "orpheus/orpheus-core": 20,
+        "orpheus/orpheus-hook": 20,
+        "orpheus/orpheus-inputcontroller": 20,
+        "orpheus/orpheus-yaml": 20,
+        "orpheus/orpheus-cache": 20,
+        "orpheus/orpheus-rendering": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

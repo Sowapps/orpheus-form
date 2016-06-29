@@ -1,0 +1,33 @@
+{
+	"name" : "orpheus/orpheus-form",
+	"description" : "Orpheus Form",
+	"keywords" : [
+		"orpheus",
+		"form"
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Orpheus\\" : "src"
+		},
+		"files" : [
+			"src/_loader.php"
+		]
+	},
+	"require" : {
+		"orpheus/orpheus-core" : "dev-master",
+		"orpheus/orpheus-hook" : "dev-master",
+		"orpheus/orpheus-inputcontroller" : "dev-master",
+		"orpheus/orpheus-yaml" : "dev-master",
+		"orpheus/orpheus-cache" : "dev-master",
+		"orpheus/orpheus-rendering" : "dev-master"
+	},
+	"type" : "library",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Florent HAZARD",
+			"email" : "contact@sowapps.com",
+			"homepage" : "http://sowapps.com",
+			"role" : "Developer"
+		}
+	]
+}
