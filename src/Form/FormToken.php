@@ -13,6 +13,9 @@ use Orpheus\InputController\InputRequest;
  * The Form Token class
  * 
  * This class is limit the use of form data to only one shot.
+ * 
+ * @author Florent Hazard <contact@sowapps.com>
+ *
  */
 class FormToken {
 	
@@ -158,6 +161,7 @@ class FormToken {
 	/**
 	 * Validate the given token from form or throw an UserException
 	 * 
+	 * @param InputRequest $domain
 	 * @param string $domain
 	 * @throws UserException
 	 */
