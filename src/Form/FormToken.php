@@ -161,7 +161,7 @@ class FormToken {
 	/**
 	 * Validate the given token from form or throw an UserException
 	 * 
-	 * @param InputRequest $domain
+	 * @param InputRequest $request
 	 * @param string $domain
 	 * @throws UserException
 	 */
