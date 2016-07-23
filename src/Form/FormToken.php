@@ -1,4 +1,7 @@
 <?php
+/**
+ * FormToken
+ */
 
 namespace Orpheus\Form;
 
@@ -10,28 +13,64 @@ use Orpheus\InputController\InputRequest;
  * The Form Token class
  * 
  * This class is limit the use of form data to only one shot.
-*/
+ */
 class FormToken {
-
+	
+	/**
+	 * The name
+	 * 
+	 * @var string
+	 */
 	protected $name;
+	
+	/**
+	 * Max allowed token
+	 * 
+	 * @var int
+	 */
 	protected $maxToken;
+	
+	/**
+	 * Max allowed usage of one token
+	 * 
+	 * @var int
+	 */
 	protected $maxUsage;
 	
+	/**
+	 * Last token
+	 * 
+	 * @var string
+	 */
 	protected $lastToken;
 	
 	const SESSION_KEY			= 'FORM_TOKENS';
 	const HTML_PREFIX			= 'token_';
 	const ERROR_INVALIDTOKEN	= 'invalidFormToken';
+	
+	/**
+	 * The default token length
+	 * 
+	 * @var integer
+	 */
 	public static $TOKEN_LENGTH	= 16;
-	// Can not be unlimited or refreshed pages will create a non limited amount of tokens
-	// We store the minimum amount of data to allow no control of expiration
+	
+	/**
+	 * The default max token
+	 * 
+	 * @var integer
+	 * 
+	 * Can not be unlimited or refreshed pages will create a non limited amount of tokens
+	 * We store the minimum amount of data to allow no control of expiration
+	 */
 	public static $DEFAULT_MAXTOKEN	= 10;
 
 	/**
 	 * Constructor
+	 * 
 	 * @param string $name
-	 * @param string $maxToken
-	 * @param number $maxUsage Number of max usage, default value is 1.
+	 * @param int $maxToken
+	 * @param int $maxUsage Number of max usage, default value is 1.
 	 */
 	public function __construct($name=NULL, $maxToken=null, $maxUsage=1) {
 		$this->name		= $name ? $name : Route::getCurrentRouteName();
@@ -41,7 +80,8 @@ class FormToken {
 
 	/**
 	 * Generate a new token
-	 * @return The token
+	 * 
+	 * @return string The token
 	 */
 	public function generateToken() {
 		if( !isset($_SESSION[self::SESSION_KEY][$this->name]) ) {
@@ -60,7 +100,8 @@ class FormToken {
 	
 	/**
 	 * Generate a new token and return HTML input tag
-	 * @param string $force
+	 * 
+	 * @param boolean $force
 	 * @return string The HTML input tag
 	 */
 	public function generateTokenHTML($force=false) {
@@ -77,6 +118,7 @@ class FormToken {
 	
 	/**
 	 * Generate a new token and display HTML input tag
+	 * 
 	 * @param string $force
 	 */
 	public function _generateTokenHTML($force=false) {
@@ -84,7 +126,8 @@ class FormToken {
 	}
 	
 	/**
-	 * Return HTML input tag
+	 * Get HTML input tag as string
+	 * 
 	 * @return string
 	 */
 	public function __toString() {
@@ -93,6 +136,7 @@ class FormToken {
 
 	/**
 	 * Validate the given token
+	 * 
 	 * @param string $token
 	 * @return boolean True if the token is valid 
 	 */
@@ -110,8 +154,10 @@ class FormToken {
 		}
 		return true;
 	}
+	
 	/**
 	 * Validate the given token from form or throw an UserException
+	 * 
 	 * @param string $domain
 	 * @throws UserException
 	 */
@@ -121,6 +167,12 @@ class FormToken {
 		}
 	}
 	
+	/**
+	 * Validate token in request
+	 * 
+	 * @param InputRequest $request
+	 * @return boolean
+	 */
 	public function validateCurrent(InputRequest $request) {
 		return $this->validate($request->getInputValue(self::HTML_PREFIX.$this->name));
 // 		return $this->validate(POST(self::HTML_PREFIX.$this->name));
