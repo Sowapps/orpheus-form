@@ -7,16 +7,11 @@
 	],
 	"autoload" : {
 		"psr-4" : {
-			"Orpheus\\" : "src"
+			"Orpheus\\": "src/"
 		}
 	},
 	"require" : {
-	  "orpheus/orpheus-core": "1.*",
-	  "orpheus/orpheus-hook": "1.*",
-	  "orpheus/orpheus-inputcontroller": "1.*",
-	  "orpheus/orpheus-yaml": "1.*",
-	  "orpheus/orpheus-cache": "1.*",
-	  "orpheus/orpheus-rendering": "1.*"
+		"orpheus/orpheus-inputcontroller": "4.*"
 	},
 	"type" : "library",
 	"license" : "MIT",
