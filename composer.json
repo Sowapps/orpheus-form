@@ -11,14 +11,14 @@
 		}
 	},
 	"require" : {
-		"orpheus/orpheus-inputcontroller": "4.*"
+		"orpheus/orpheus-inputcontroller": "^4.0.0"
 	},
 	"type" : "library",
 	"license" : "MIT",
 	"authors" : [{
 			"name" : "Florent HAZARD",
 			"email" : "contact@sowapps.com",
-			"homepage" : "http://sowapps.com",
+			"homepage" : "https://sowapps.com",
 			"role" : "Developer"
 		}
 	]

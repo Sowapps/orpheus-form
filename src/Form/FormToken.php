@@ -37,7 +37,7 @@ class FormToken {
 	 *
 	 * @var integer
 	 *
-	 * Can not be unlimited or refreshed pages will create a non limited amount of tokens
+	 * Can not be unlimited or refreshed pages will create a non-limited amount of tokens
 	 * We store the minimum amount of data to allow no control of expiration
 	 */
 	public static int $DEFAULT_TOKEN_LIMIT = 10;
@@ -73,8 +73,6 @@ class FormToken {
 	/**
 	 * Constructor
 	 *
-	 * @param string|null $name
-	 * @param int|null $maxToken
 	 * @param int $maxUsage Number of max usage, default value is 1.
 	 */
 	public function __construct(?string $name = null, ?int $maxToken = null, int $maxUsage = 1) {
@@ -94,7 +92,7 @@ class FormToken {
 		}
 		$TOKEN_SESSION = &$_SESSION[self::SESSION_KEY][$this->name];
 		do {
-			$token = generatePassword(static::$TOKEN_LENGTH);
+			$token = generateRandomString(static::$TOKEN_LENGTH);
 		} while( isset($TOKEN_SESSION[$token]) );
 		if( count($TOKEN_SESSION) >= $this->tokenLimit ) {
 			array_shift($TOKEN_SESSION);
@@ -107,10 +105,9 @@ class FormToken {
 	/**
 	 * Generate a new token and return HTML input tag
 	 *
-	 * @param boolean $force
 	 * @return string The HTML input tag
 	 */
-	public function generateTokenHTML($force = false): string {
+	public function generateTokenHTML(bool $force = false): string {
 		if( $force ) {
 			$token = $this->generateToken();
 		} else {
@@ -135,10 +132,9 @@ class FormToken {
 	/**
 	 * Validate the given token
 	 *
-	 * @param string $token
 	 * @return boolean True if the token is valid
 	 */
-	public function validate($token): bool {
+	public function validate(string $token): bool {
 		if( !isset($_SESSION[self::SESSION_KEY][$this->name]) ) {
 			return false;
 		}
@@ -157,11 +153,9 @@ class FormToken {
 	/**
 	 * Validate the given token from form or throw an UserException
 	 *
-	 * @param InputRequest $request
-	 * @param string $domain
 	 * @throws UserException
 	 */
-	public function validateForm(InputRequest $request, $domain = null) {
+	public function validateForm(InputRequest $request, ?string $domain = null): void {
 		if( !$this->validateCurrent($request) ) {
 			throw new UserException(self::ERROR_INVALID_TOKEN, $domain);
 		}
@@ -169,9 +163,6 @@ class FormToken {
 	
 	/**
 	 * Validate token in request
-	 *
-	 * @param InputRequest $request
-	 * @return boolean
 	 */
 	public function validateCurrent(InputRequest $request): bool {
 		return $this->validate($request->getInputValue(self::HTML_PREFIX . $this->name));
